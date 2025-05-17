@@ -1,0 +1,10 @@
+# Dependencies for SLAM project.
+
+pykitti
+opencv-python
+matplotlib 
+numpy
+g2o-python
+imageio
+evo
+pydbow3
