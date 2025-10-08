@@ -9,7 +9,6 @@ This repository contains a complete SLAM implementation with data processing pip
 ## Features
 
 - Real-time simultaneous localization and mapping
-- Support for various sensor inputs (LiDAR, cameras, IMU)
 - Data preprocessing and filtering modules
 - Map visualization and export capabilities
 - Particle filter and EKF-based implementations
@@ -65,35 +64,6 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Usage
-
-### Basic SLAM Execution
-
-```python
-from src.slam import SLAM
-from src.sensors import SensorData
-
-# Initialize SLAM system
-slam = SLAM()
-
-# Load sensor data
-data = SensorData('data/sample.bag')
-
-# Run SLAM algorithm
-for measurement in data:
-    slam.update(measurement)
-    map, pose = slam.get_state()
-```
-
-### Visualization
-
-```python
-from src.utils import visualize_map
-
-# Visualize the generated map
-visualize_map(slam.get_map(), slam.get_trajectory())
-```
-
 ### Command Line Interface
 
 ```bash
@@ -103,12 +73,3 @@ python src/slam.py --input data/dataset.bag --output results/
 # Enable visualization
 python src/slam.py --input data/dataset.bag --visualize
 ```
-
-## Algorithms Implemented
-
-- **FastSLAM** - Particle filter-based SLAM
-- **EKF-SLAM** - Extended Kalman Filter SLAM
-- **Grid Mapping** - Occupancy grid-based mapping
-- **Feature-based SLAM** - Landmark detection and tracking
-
-
